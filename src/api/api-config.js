@@ -1,6 +1,8 @@
+const key = process.env.TMDB_KEY;
+
 const apiConfig = {
   baseUrl: 'https://api.themoviedb.org/3/',
-  apiKey: process.env.TMDB_KEY,
+  apiKey: key,
   originalImage: (imgPath) => `https://image.tmdb.org/t/p/original/${imgPath}`,
   w500Image: (imgPath) => `https://image.tmdb.org/t/p/w500/${imgPath}`
 }

@@ -1,0 +1,115 @@
+@use "../../scss/" as *;
+
+.footer {
+  margin-top: 2rem;
+  position: relative;
+  padding: 6rem 5rem;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+  @include tablet {
+    padding: 6rem 3rem;
+  }
+  &__content {
+    &_logo {
+      @include flex(center, center);
+      margin-bottom: 3rem;
+    }
+  }
+}
+.box-container {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .box {
+    padding: 0 1rem;
+    width: 33%;
+    min-width: 250px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      width: 49%;
+    }
+    @include mobile {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+    h3 {
+      font-size: 2rem;
+      color: var(--black);
+      padding: 1rem 0;
+      i {
+        color: red;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      color: var(--light-color);
+      padding: 1rem 0;
+    }
+    .links {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 1.5rem;
+      color: var(--light-color);
+      padding: 0.5rem 0;
+      @include mobile {
+        justify-content: center;
+      }
+      i {
+        color: red;
+        padding-right: 0.5rem;
+        transition: all 0.3s ease;
+      }
+      &:hover i {
+        padding-right: 1rem;
+      }
+    }
+    .share {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      @include mobile {
+        justify-content: center;
+      }
+      a {
+        &:hover i {
+          border-color: white;
+        }
+        i {
+          border: 1px solid transparent;
+          border-radius: 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 4rem;
+          width: 4rem;
+          font-size: 2rem;
+          color: white;
+          background: rgb(184, 13, 13);
+          transition: border 0.3s ease;
+        }
+      }
+    }
+  }
+}
+
+.credit {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  padding-top: 2.5rem;
+  font-size: 1.5rem;
+  color: var(--black);
+  border-top: 0.2rem solid var(--light-color);
+}
+
+.credit span {
+  color: red;
+}

@@ -1,0 +1,101 @@
+@use "../../scss/" as *;
+
+.banner {
+  height: 100vh;
+  position: relative;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include tablet {
+    height: 50vh;
+  }
+  @include mobile {
+    height: 50vh;
+    background-position: center;
+    margin-bottom: 40vh;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+    z-index: 1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
+}
+.movie-content {
+  @include flex(flex-start, flex-start);
+  max-width: 1260px;
+  margin: unset auto;
+  margin-top: -80vh !important;
+  position: relative;
+  padding: 0 2rem;
+  z-index: 3;
+  @include tablet {
+    margin-top: -20vh !important;
+  }
+  @include mobile {
+    margin-top: -65vh !important;
+  }
+  &__poster {
+    flex: 1;
+    @include mobile {
+      display: none;
+    }
+    &_img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding-top: 150%;
+      @include tablet {
+        padding-top: 180%;
+      }
+      border-radius: $border-radius;
+      z-index: 97;
+    }
+  }
+  &__info {
+    width: 70%;
+    padding-left: 2rem;
+    position: relative;
+    @include mobile {
+      width: 100%;
+      padding-left: 0;
+    }
+    & > * {
+      margin-bottom: 1rem;
+    }
+    .title {
+      font-size: 4rem;
+      line-height: 1;
+    }
+    .genres {
+      & > * ~ * {
+        margin-left: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      &__item {
+        display: inline-block;
+        margin: 0.5rem 0.2rem;
+        padding: 0.3rem 1.2rem;
+        border: 2px solid $white;
+        border-radius: $border-radius;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: $body-bg;
+      }
+    }
+  }
+}
